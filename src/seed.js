@@ -26,10 +26,3 @@ export function bootstrapAdmin(db, email, password) {
   db.prepare("INSERT INTO users(email,name,role,pw_hash) VALUES(?,?,?,?)").run(email.toLowerCase(), "Administrator", "admin", hashPassword(password));
   return true;
 }
-
-if (process.argv[1] && import.meta.url === new URL(process.argv[1], "file://").href) {
-  const { openDb } = await import("./db.js");
-  const db = openDb(process.env.DB_PATH || "data/outage.db");
-  seedDemo(db);
-  console.log("Seeded demo users (password: " + DEMO_PASSWORD + ")");
-}
