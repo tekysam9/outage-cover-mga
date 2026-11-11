@@ -1,10 +1,65 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Power-outage cover for independent grocers | Outage Cover</title><meta name="description" content="Fast, claim-free cover that pays when the power is out long enough to spoil your cold chain."><link rel="stylesheet" href="/styles.css"></head>
-<body><header><div class="bar"><a class="brand" href="/">Outage<b>·</b><i>Cover</i></a>
+<title>Outage Cover | Get paid when the power goes out</title>
+<meta name="description" content="Parametric power-outage cover for independent grocers, convenience stores and pharmacies. No claim form: when a verified outage lasts long enough, you get paid.">
+<meta name="theme-color" content="#009FDB"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Outage Cover: get paid when the power goes out"><meta property="og:description" content="Claim-free power-outage cover for independent grocers, c-stores and pharmacies.">
+<link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header><div class="bar"><a class="brand logo" href="/"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#009FDB"/><path d="M36 8 20 36h10l-4 20 18-30H34z" fill="#F58220"/></svg>Outage<b>·</b><i>Cover</i></a>
 <nav><a href="/how-it-works">How it works</a><a href="/partners">Partners</a><a href="/compliance">Compliance</a><a href="/app/">Sign in</a><a class="cta" href="/app/">Get a quote</a></nav></div></header>
-<div class="wrap hero"><h1>When the power fails,<br><em>you get paid.</em></h1><p class="lead">Outage Cover pays independent grocers, convenience stores and pharmacies a fixed amount when a verified power outage lasts long enough to threaten refrigerated stock. No claim form. No adjuster.</p><div class="actions"><a class="cta" href="/app/">Get a quote in minutes</a><a class="cta ghost" href="/how-it-works">See how it works</a></div></div>
-<div class="band"><div class="wrap"><section><div class="grid"><div class="card"><div class="num">1</div><h3>Tell us about your store</h3><p>Your ZIP, utility and the value of your cold-chain stock. About two minutes.</p></div><div class="card"><div class="num">2</div><h3>See your price and payout</h3><p>One plain sentence: what you pay, when we pay and how much.</p></div><div class="card"><div class="num">3</div><h3>We watch the grid for you</h3><p>When outage data from independent sources agrees, payment starts on its own.</p></div></div></section></div></div>
-<div class="wrap"><section><h2>Built for the way a store really loses money</h2><div class="grid"><div class="card"><h3>Pays on a fixed rule</h3><p>Payouts follow published, versioned rules, never a model’s opinion. Every decision can be replayed.</p></div><div class="card"><h3>Two sources must agree</h3><p>If data sources disagree, a person reviews it. Duplicate events never pay twice.</p></div><div class="card"><h3>Fast by design</h3><p>We target payment within 72 hours of a confirmed outage. Under a set limit, payment is released automatically.</p></div><div class="card"><h3>Priced for small stores</h3><p>Limits sized to your stock, up to $50,000, with a discount if you add a store sensor.</p></div></div></section>
-<section><div class="note"><b>Prototype notice.</b> This site and portal demonstrate a proposed product. Outage Cover is not an insurer, is not yet licensed in any state and cannot sell cover today. Launch depends on a fronting carrier, reinsurance and state approval, starting with Texas.</div></section></div>
-<footer><div class="wrap"><span>© Outage Cover (working name). Prototype: not an insurer, not yet licensed or in market.</span><a href="/how-it-works">How it works</a><a href="/partners">Partners</a><a href="/compliance">Compliance</a><a href="/app/">Portal</a></div></footer></body></html>
+
+<section class="hero2"><div class="wrap">
+<div>
+<span class="eyebrow"><i></i>Launching first in Texas</span>
+<h1>When the power goes out, <em>your freezers shouldn’t cost you the month.</em></h1>
+<p class="lead">Outage Cover pays independent grocers, convenience stores and pharmacies a fixed amount when a verified outage lasts long enough to threaten refrigerated stock. No claim form. No adjuster. No waiting on paperwork.</p>
+<div class="actions"><a class="cta big" href="/app/">Get a quote in 2 minutes</a><a class="cta ghost big" href="/how-it-works">See how it works</a></div>
+<div class="trust"><span>Fixed, published payout rules</span><span>Never decided by AI</span><span>Every decision replayable</span></div>
+</div>
+<div class="panel" aria-label="Payout estimator">
+<h3>See what a bad outage could pay</h3><p class="sub">Illustrative only. Not a quote.</p>
+<svg viewBox="0 0 360 120" role="img" aria-label="Store with refrigerators and a power outage" style="width:100%;height:auto">
+<rect x="10" y="40" width="340" height="70" rx="10" fill="#f5f9fc" stroke="#e8e8ed"/><rect x="10" y="30" width="340" height="18" rx="6" fill="#009FDB"/>
+<rect x="30" y="58" width="44" height="46" rx="6" fill="#fff" stroke="#bfe6f6"/><rect x="82" y="58" width="44" height="46" rx="6" fill="#fff" stroke="#bfe6f6"/><rect x="134" y="58" width="44" height="46" rx="6" fill="#fff" stroke="#bfe6f6"/>
+<g fill="#9bdcf5"><rect x="38" y="66" width="28" height="6" rx="3"/><rect x="38" y="78" width="28" height="6" rx="3"/><rect x="90" y="66" width="28" height="6" rx="3"/><rect x="90" y="78" width="28" height="6" rx="3"/><rect x="142" y="66" width="28" height="6" rx="3"/></g>
+<path class="bolt" d="M262 8 240 52h16l-6 30 28-46h-16z" fill="#F58220"/>
+<circle cx="300" cy="84" r="16" fill="#fff" stroke="#e8e8ed"/><path d="M300 74v10l7 4" stroke="#6e6e73" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+<label for="inv">Cold-chain stock <b id="invOut"></b></label><input id="inv" type="range" min="10000" max="200000" step="5000" value="80000">
+<label for="hrs">Outage length <b id="hrsOut"></b></label><input id="hrs" type="range" min="0" max="36" step="1" value="10">
+<div class="bar-track"><div class="bar-fill" id="fill"></div></div><div class="ticks"><span>0h</span><span>4h · 25%</span><span>8h · 50%</span><span>24h · 100%</span></div>
+<div class="payout"><div><div class="sub" style="margin:0">Your limit <b style="font-size:16px;color:var(--ink)" id="limitOut"></b></div><div class="sub" style="margin:0" id="tierOut"></div></div><div style="text-align:right"><div class="sub" style="margin:0">Payout</div><b id="payOut"></b></div></div>
+<p class="fine">Limit is 50% of stock, up to $50,000. Waiting period and verified data sources apply. Premium depends on your area and options.</p>
+</div></div></section>
+
+<div class="wrap"><section class="reveal"><div class="stats">
+<div class="stat"><b>$0</b><span>claim forms to file</span></div><div class="stat"><b>72 h</b><span>payment target after a confirmed outage</span></div><div class="stat"><b>2+</b><span>independent data sources must agree</span></div><div class="stat"><b>$50k</b><span>maximum limit per store</span></div></div></section>
+
+<section class="reveal"><h2>How you get paid</h2><p style="color:var(--mute);margin-top:0">Four steps. The only one that needs you is the first.</p>
+<div class="timeline"><div class="card"><h3>Tell us about your store</h3><p>ZIP, utility and the value of your refrigerated stock.</p></div><div class="card"><h3>Pick your cover</h3><p>Tiered payouts at 4, 8 and 24 hours, or a single trigger you choose.</p></div><div class="card"><h3>We watch the grid</h3><p>Outage data from independent sources is checked against fixed rules.</p></div><div class="card"><h3>Payment starts</h3><p>When the rules are met, payment goes out. A person reviews anything unclear.</p></div></div></section>
+
+<section class="reveal"><h2>Why not just file a claim?</h2><div class="compare">
+<div class="card"><h3>Traditional spoilage claim</h3><ul><li>Prove what spoiled, item by item</li><li>Wait for an adjuster</li><li>Weeks of paperwork</li><li>Cash arrives long after the shelves are restocked</li></ul></div>
+<div class="card win"><h3>Outage Cover <span class="pill" style="background:#e6f5fc;color:var(--blue-d);font-size:12px;padding:2px 10px;border-radius:99px">parametric</span></h3><ul><li>Pays on a measured outage, not on proof of loss</li><li>No claim form or adjuster</li><li>Rules are fixed and published</li><li>Built for speed when cash matters most</li></ul></div></div>
+<p class="fine" style="margin-top:12px">Honest trade-off (basis risk): a bad outage your data sources don’t show means no payout is due. In exchange you get speed and certainty.</p></section>
+
+<section class="reveal"><h2>Built so you can check our work</h2><div class="grid">
+<div class="card"><h3>Rules, not opinions</h3><p>Payouts follow versioned rules. Re-run any decision from its stored inputs and get the same answer.</p></div>
+<div class="card"><h3>Tamper-evident records</h3><p>Every action is chained to the one before it. Edits are detectable.</p></div>
+<div class="card"><h3>Two sets of eyes</h3><p>Rate changes and large payouts need a second person to approve.</p></div>
+<div class="card"><h3>Your rate stays yours</h3><p>Your policy keeps the rate and rule versions it was sold on.</p></div></div></section>
+
+<section class="reveal faq"><h2>Questions</h2>
+<details><summary>Is Outage Cover an insurance company?</summary><p>No. We’re building a managing general agent. Policies are meant to be issued by a licensed carrier, and we’re not selling anywhere until the licensing and carrier arrangements are in place. This site shows the product as it will work.</p></details>
+<details><summary>Where will it be available?</summary><p>Texas first. Florida and New York come later, subject to counsel review. California is closed for now.</p></details>
+<details><summary>What counts as an outage?</summary><p>An outage at your ZIP confirmed by independent data sources that agree on duration, after your 24-hour waiting period. If sources disagree, a person reviews it.</p></details>
+<details><summary>How fast is payment?</summary><p>We target payment within 72 hours of a confirmed outage. Your first payout is held until your bank account is verified, and payouts above $15,000 need a second approval.</p></details>
+<details><summary>Can I sell this to my customers or members?</summary><p>Yes. Agents, associations and equipment or POS partners can quote and bind through the portal or API. See <a href="/partners">Partners</a>.</p></details></section>
+
+<section class="reveal"><div class="cta-band"><h2>See your price in two minutes</h2><p style="color:var(--mute);margin:0 0 20px">No commitment. Create an account to explore the portal.</p><a class="cta big" href="/app/">Get a quote</a></div></section>
+
+<section><div class="note"><b>Prototype notice.</b> Outage Cover is not an insurer and is not yet licensed in any state. It can’t sell cover today. Launch depends on a fronting carrier, reinsurance and state approval, starting with Texas.</div></section></div>
+
+<footer><div class="wrap"><span>© Outage Cover (working name)</span><a href="/how-it-works">How it works</a><a href="/partners">Partners</a><a href="/compliance">Compliance</a><a href="/app/">Portal</a></div></footer>
+<script src="/home.js" defer></script>
+</body></html>
