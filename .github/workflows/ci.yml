@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --version
+      - run: npm test
+      - run: npm run check:site
+      - name: Boot smoke test
+        run: |
+          DEMO=1 PORT=3111 node src/server.js &
+          for i in $(seq 1 20); do curl -fs localhost:3111/api/health && break || sleep 1; done
+          curl -fs localhost:3111/api/health | grep '"ok":true'
+          curl -fs localhost:3111/ | grep -q "Outage"
+          curl -fs localhost:3111/app/ | grep -q "Outage Cover Portal"
